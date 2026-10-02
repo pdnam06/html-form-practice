@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form đăng ký sở thích</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="form-page hobby-page">
+    <main class="form-card form-card-small">
+        <a class="back-link" href="index.html">← Danh sách biểu mẫu</a>
+
+        <header class="form-header form-header-orange">
+            <p>PHẦN 1</p>
+            <h1>Sở thích của bạn</h1>
+        </header>
+
+        <form action="#" method="GET">
+            <div class="form-row">
+                <label for="yourname">Họ và tên</label>
+                <input type="text" id="yourname" name="yourname" placeholder="Nhập họ và tên" required>
+            </div>
+
+            <div class="form-row">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="example@email.com" required>
+            </div>
+
+            <fieldset class="form-row">
+                <legend>Sở thích</legend>
+                <div class="choice-grid choice-grid-three hobby-choices">
+                    <label><input type="checkbox" name="hobby" value="sports"> Thể thao</label>
+                    <label><input type="checkbox" name="hobby" value="music"> Âm nhạc</label>
+                    <label><input type="checkbox" name="hobby" value="reading"> Đọc sách</label>
+                    <label><input type="checkbox" name="hobby" value="web"> Lướt web</label>
+                    <label><input type="checkbox" name="hobby" value="travel"> Du lịch</label>
+                    <label><input type="checkbox" name="hobby" value="games"> Chơi game</label>
+                </div>
+            </fieldset>
+
+            <div class="form-actions">
+                <button type="submit" class="button button-orange">Gửi thông tin</button>
+                <button type="reset" class="button button-muted">Nhập lại</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

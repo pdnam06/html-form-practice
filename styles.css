@@ -1,0 +1,293 @@
+:root {
+    --ink: #183153;
+    --muted: #60708a;
+    --line: #d8e0eb;
+    --surface: #ffffff;
+    --orange: #f26b21;
+    --orange-dark: #cf4f0c;
+    --orange-soft: #fff1e8;
+    --blue: #1565c0;
+    --blue-dark: #0d47a1;
+    --blue-soft: #eaf3ff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: var(--ink);
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
+    line-height: 1.55;
+}
+
+.home-page {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 32px 20px;
+    background: linear-gradient(135deg, #eff6ff 0%, #fff6ef 100%);
+}
+
+.home-shell {
+    width: min(900px, 100%);
+}
+
+.eyebrow {
+    margin: 0;
+    color: var(--blue);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.home-shell h1 {
+    margin: 8px 0;
+    font-size: clamp(32px, 6vw, 58px);
+    line-height: 1.12;
+}
+
+.home-description {
+    margin: 0 0 34px;
+    color: var(--muted);
+    font-size: 18px;
+}
+
+.form-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.form-link {
+    min-height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+    color: var(--ink);
+    text-decoration: none;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: var(--surface);
+    box-shadow: 0 18px 45px rgba(24, 49, 83, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-link:hover,
+.form-link:focus-visible {
+    transform: translateY(-5px);
+    box-shadow: 0 24px 55px rgba(24, 49, 83, 0.16);
+}
+
+.form-link-orange { border-top: 8px solid var(--orange); }
+.form-link-blue { border-top: 8px solid var(--blue); }
+.form-link span { font-size: 12px; font-weight: bold; letter-spacing: 1.5px; }
+.form-link strong { margin: 10px 0 6px; font-size: 23px; }
+.form-link small { color: var(--muted); font-size: 14px; }
+
+.form-page {
+    min-height: 100vh;
+    padding: 42px 20px;
+    background: #f3f6fa;
+}
+
+.hobby-page { background: linear-gradient(145deg, #fff4ed, #f6f8fb); }
+.student-page { background: linear-gradient(145deg, #edf5ff, #f6f8fb); }
+
+.form-card {
+    margin: 0 auto;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    box-shadow: 0 22px 60px rgba(24, 49, 83, 0.12);
+}
+
+.form-card-small { max-width: 720px; }
+.form-card-large { max-width: 960px; }
+
+.back-link {
+    display: block;
+    padding: 18px 34px;
+    color: var(--muted);
+    font-size: 14px;
+    text-decoration: none;
+    background: #fff;
+}
+
+.back-link:hover { color: var(--blue); }
+
+.form-header {
+    padding: 28px 34px;
+}
+
+.form-header-orange { color: #812f04; background: var(--orange-soft); border-left: 8px solid var(--orange); }
+.form-header-blue { color: #073b78; background: var(--blue-soft); border-left: 8px solid var(--blue); }
+.form-header p { margin: 0 0 4px; font-size: 12px; font-weight: bold; letter-spacing: 2px; }
+.form-header h1 { margin: 0; font-size: clamp(28px, 5vw, 42px); }
+.form-header span { display: block; margin-top: 8px; color: var(--muted); }
+
+form {
+    padding: 34px;
+}
+
+.form-section + .form-section {
+    margin-top: 36px;
+    padding-top: 30px;
+    border-top: 1px solid var(--line);
+}
+
+.form-section h2 {
+    margin: 0 0 22px;
+    font-size: 21px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    align-items: start;
+    gap: 18px;
+    margin-bottom: 22px;
+    padding: 0;
+    border: 0;
+}
+
+.form-row > label,
+.form-row > legend {
+    padding-top: 10px;
+    color: #324b6b;
+    font-weight: bold;
+}
+
+.form-row > legend { float: left; width: 140px; }
+
+.two-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-field {
+    margin-bottom: 20px;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.form-field label span { color: #d32f2f; }
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 11px 12px;
+    color: var(--ink);
+    font: inherit;
+    border: 1px solid #b8c5d6;
+    border-radius: 8px;
+    background: #fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid rgba(21, 101, 192, 0.15);
+    border-color: var(--blue);
+}
+
+textarea { resize: vertical; }
+
+.inline-fieldset {
+    margin: 0 0 20px;
+    padding: 16px 18px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+}
+
+.inline-fieldset legend {
+    padding: 0 7px;
+    font-weight: bold;
+}
+
+.compact-fieldset { align-self: start; }
+
+.choice-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 28px;
+}
+
+.choice-grid {
+    display: grid;
+    gap: 12px 18px;
+}
+
+.choice-grid-three { grid-template-columns: repeat(3, 1fr); }
+.choice-grid-four { grid-template-columns: repeat(4, 1fr); }
+.choice-grid label,
+.choice-row label { cursor: pointer; }
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: 17px;
+    height: 17px;
+    margin-right: 5px;
+    vertical-align: -3px;
+    accent-color: var(--blue);
+}
+
+.hobby-choices input { accent-color: var(--orange); }
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.button {
+    padding: 12px 22px;
+    color: white;
+    font: inherit;
+    font-weight: bold;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.button-orange { background: var(--orange); }
+.button-orange:hover { background: var(--orange-dark); }
+.button-blue { background: var(--blue); }
+.button-blue:hover { background: var(--blue-dark); }
+.button-muted { color: #425873; background: #e7ecf2; }
+.button-muted:hover { background: #d9e0e9; }
+
+@media (max-width: 700px) {
+    .form-links,
+    .two-columns,
+    .choice-grid-three,
+    .choice-grid-four {
+        grid-template-columns: 1fr;
+    }
+
+    .form-page { padding: 18px 10px; }
+    .back-link, .form-header, form { padding-left: 20px; padding-right: 20px; }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .form-row > label,
+    .form-row > legend { padding-top: 0; }
+    .form-row > legend { float: none; width: auto; }
+
+    .form-actions { flex-direction: column; }
+    .button { width: 100%; }
+}
